@@ -48,3 +48,14 @@ jobs:
 
       - name: Test
         run: cd ${{github.workspace}}/build && ./bin/tests
+
+      - name: Run Synchronous Examples
+        run: cd ${{github.workspace}}/build && ./bin/example-send-transaction && ./bin/example-get-account-info
+
+      - name: Run Example position
+        run: cd ${{github.workspace}}/build && ./bin/example-positions & sleep 10 ; kill $1;
+
+      - name: Run Example account subscribe
+        run: cd ${{github.workspace}}/build && ./bin/example-account-subscribe & sleep 10 ; kill $1;
+
+
