@@ -28,7 +28,7 @@ PublicKey PublicKey::fromBase58(const std::string &b58) {
   const auto ok = b58tobin(result.data.data(), &decodedSize, b58.c_str(), 0);
   if (!ok) throw std::runtime_error("invalid base58 '" + b58 + "'");
   if (decodedSize != SIZE)
-    throw std::runtime_error("not a valid PublicKey '" +
+    throw std::runtime_error("not a valid PublicKey'" +
                              std::to_string(decodedSize) +
                              " != " + std::to_string(SIZE) + "'");
   return result;
